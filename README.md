@@ -14,3 +14,8 @@ Build & minify production assets:
 ```
 npm run build
 ```
+
+Run the dev server:
+```
+npm run server
+```
