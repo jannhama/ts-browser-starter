@@ -14,6 +14,15 @@ app.get('/api/location', (req, res) => {
         .catch((e) => res.sendStatus(500));
 });
 
+app.get('/api/location/:id', (req, res) => {
+    const locationId = req.params.id;
+    console.log(req.id);
+    return api.get(`/location/${locationId}`)
+        .then(({data}) =>  res.json(data))
+        .catch((e) => res.sendStatus(500));
+});
+
+
 app.get('*', (req, res) => {
     res.json("Make sure you're using /api/location/search?query={your search term}");
 })
